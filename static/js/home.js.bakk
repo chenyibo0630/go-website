@@ -1,0 +1,48 @@
+(function(exports,$){
+
+	var socket;
+
+	var  init = function(){
+		// $('.bxslider').bxSlider({
+		// 	adaptiveHeight:true,
+		// 	auto:true
+		// });
+		// socket = new WebSocket("ws://121.40.236.53:9090/echo");
+		// socket.onopen = function(){
+		// 	console.log("open");
+		// }
+		// socket.onclose = function(){
+		// 	console.log("close");
+		// }
+		// socket.onmessage = function(e){
+		// 	console.log("message:"+e.data);
+		// }
+	}
+
+	var bindEvents = function(){
+		//scroll event
+		var lastScrollTop = 0;
+		$(window).scroll(function(event){
+		   var st = $(this).scrollTop();
+		   if (st > lastScrollTop){
+		   		
+		       // downscroll code
+		   } else {
+		      // upscroll code
+		   }
+		   lastScrollTop = st;
+		});
+		// $('#btn').on("click",function(){
+		// 	send();
+		// })
+	}
+
+	// var send = function(){
+	// 	socket.send($("#wrapper").html());
+	// }
+
+	$(function(){
+		init();
+		bindEvents();
+	});
+}(window,jQuery))
