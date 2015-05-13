@@ -23,8 +23,9 @@ import (
 // }
 
 func Home(w http.ResponseWriter, r *http.Request) {
-	t, _ := template.ParseFiles("static/home.html")
-	t.Execute(w, nil)
+	fmt.Println(r.Referer())
+	s1, _ := template.ParseFiles("view/home.html", "view/common.html")
+	s1.ExecuteTemplate(w, "content", nil)
 }
 
 func Echo(ws *websocket.Conn) {

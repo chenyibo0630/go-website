@@ -1,3 +1,4 @@
+{{define "content"}}
 <html>
 	<head>
 		<!--jquery first -->
@@ -8,18 +9,10 @@
 		<!-- css -->
 		<link href="/static/css/home.css" rel="stylesheet"/>
 		<!-- less -->
-		<link href="/static/css/home.css" rel="stylesheet"/>
+		<link href="/static/css/common.css" rel="stylesheet"/>
 	</head>
 	<body>
-		<div id="header">
-			<div id="main_menu">
-				<ul>
-					<li><a href="#">GO</a></li>
-					<li><a href="#">JAVA</a></li>
-					<li><a href="#">LUA</a></li>
-				</ul>
-			</div>
-		</div>
+		{{template "header"}}
 		<div class="slider">
 			<ul class="slider-wrapper">
 			  <li class="slider-item"><img src="/static/images/pic1.jpg" /></li>
@@ -27,8 +20,7 @@
 			  <li class="slider-item"><img src="/static/images/pic3.jpg" /></li>
 			</ul>
 		</div>
-		<div class="footer">
-		        <div class="footer-copyright">© 2015 别怕有波哥. All rights reserved.</div>
-		</div>
+		{{template "footer"}}
 	</body>
 </html>
+{{end}}

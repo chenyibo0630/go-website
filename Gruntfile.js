@@ -19,6 +19,7 @@ grunt.initConfig({
                 yuicompress: false
             },
             files: {
+              "static/css/common.css": "static/less/common.less",
               "static/css/home.css": "static/less/home.less"
               //...
             }
