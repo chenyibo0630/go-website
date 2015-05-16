@@ -1,10 +1,11 @@
 package route
 
 import (
-	"cyb/action"
+	"fmt"
+	"go-website/action"
 	"go.net/websocket"
 	"net/http"
-	"strings"
+	"regexp"
 )
 
 func HandleRoute() {
@@ -16,8 +17,16 @@ func HandleRoute() {
 	//defalt
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		host := r.Referer()
-		if strings.EqualFold(host, "http://blog.yibosama.com") {
-
+		// host := "blog.yibosama.com"
+		reg := regexp.MustCompile(`(?:http://)?(?P<domain>\w+)[\.][\w]*[\.]com`)
+		domain := reg.FindStringSubmatch(host)
+		if domain != nil && len(domain) > 1 {
+			switch domain[1] {
+			case "blog":
+				fmt.Println("blog")
+			default:
+				action.Home(w, r)
+			}
 		} else {
 			//homepage
 			action.Home(w, r)

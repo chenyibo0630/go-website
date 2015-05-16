@@ -1,7 +1,7 @@
 package main
 
 import (
-	"cyb/route"
+	"go-website/route"
 	"log"
 	"net/http"
 )
