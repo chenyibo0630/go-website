@@ -14,6 +14,10 @@ func HandleRoute() {
 	//static
 	fs := http.FileServer(http.Dir("static"))
 	http.Handle("/static/", http.StripPrefix("/static/", fs))
+	//games
+	http.HandleFunc("/games/pokeMole", func(w http.ResponseWriter, r *http.Request) {
+		action.PokeMole(w, r)
+	})
 	//defalt
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		host := r.Referer()

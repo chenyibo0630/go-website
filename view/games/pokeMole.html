@@ -5,10 +5,10 @@
 		<script src="/static/js/jquery-1.11.2.min.js" type="application/javascript"></script>
 		<!--lib js -->
 		<!-- my js -->
-		<script src="/static/js/home.js" type="application/javascript"></script>
+		<script src="/static/js/pokeMole.js" type="application/javascript"></script>
 		<script src="/static/js/common.js" type="application/javascript"></script>
 		<!-- css -->
-		<link href="/static/css/home.css" rel="stylesheet"/>
+		<link href="/static/css/pokeMole.css" rel="stylesheet"/>
 		<!-- less -->
 		<link href="/static/css/common.css" rel="stylesheet"/>
 		<link href="/static/icon/favicon.ico" rel="icon" type="image/x-icon" />
@@ -16,13 +16,17 @@
 
 	<body>
 		{{template "header"}}
-		<div class="slider">
-			<ul class="slider-wrapper">
-			  <li class="slider-item"><img src="/static/images/pic1.jpg" /></li>
-			  <li class="slider-item"><img src="/static/images/pic2.jpg" /></li>
-			  <li class="slider-item"><img src="/static/images/pic3.jpg" /></li>
-			</ul>
+		<div  class="pokeMole">
+			<canvas class="pokeMole-inner">
+				<div class="mouse-wrapper">
+				</div>
+			</canvas>
+			
+			<div class="newGameBtn"></div>
+			<div class="playAgainBtn"></div>
 		</div>
+		<div class="score">score:0</div>
+		<div class="escaped">escaped:0</div>
 		{{template "footer"}}
 	</body>
 </html>

@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"go.net/websocket"
 	"html/template"
+	"log"
 	"net/http"
 )
 
@@ -24,7 +25,10 @@ import (
 
 func Home(w http.ResponseWriter, r *http.Request) {
 	fmt.Println(r.Referer())
-	s1, _ := template.ParseFiles("view/home.html", "view/common.html")
+	s1, err := template.ParseFiles("view/home.html", "view/common.html")
+	if err != nil {
+		log.Println(err)
+	}
 	s1.ExecuteTemplate(w, "content", nil)
 }
 
